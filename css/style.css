@@ -58,10 +58,10 @@ input::-ms-clear {
 
 button {
 	cursor: pointer;
-	background: #000;
+	background: none;
 	outline: none;
 	font: inherit;
-	color: inherit;
+	color: #000;
 	-webkit-appearance: none !important;
 }
 
@@ -102,20 +102,60 @@ h1 {
 	font-size: 32px;
 }
 
+.vmodal {
+}
+
+.vmodal.open .modal-overlay,
+.vmodal.open .modal-window {
+	opacity: 1;
+	z-index: 20;
+}
+
+.vmodal.hide .modal-overlay,
+.vmodal.hide .modal-window {
+	opacity: 1;
+	z-index: 20;
+}
+
+.vmodal.hide .modal-window {
+	transform: translateY(-200px);
+}
+
+.vmodal.hide .modal-overlay {
+	background: rgba(0, 0, 0, 0);
+}
+
+.vmodal.open .modal-window {
+	transform: translateY(100px);
+}
+
+.modal-window,
+.modal-overlay {
+	opacity: 0;
+	z-index: -1;
+}
+
+.vmodal.open .modal-overlay {
+	background: rgba(0, 0, 0, 0.5);
+}
+
 .modal-overlay {
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0);
+	transition: background 0.2s ease-in;
 }
 
 .modal-window {
 	width: 600px;
 	border-radius: 6px;
 	background: #ccc;
-	margin: 100px auto;
+	margin: 0 auto;
+	transform: translateY(-200px);
+	transition: transform 0.2s ease-in;
 }
 
 .modal-header {
@@ -137,9 +177,20 @@ h1 {
 
 .modal-body {
 	padding: 10px;
+	color: #000;
+}
+
+.modal-body p {
+	margin: 0 0 5px;
 }
 
 .modal-footer {
 	padding: 5px 10px;
 	border-top: 1px solid #eee;
+}
+
+.modal-footer button {
+	border: 1px solid #000;
+	border-radius: 4px;
+	padding: 5px 10px;
 }
