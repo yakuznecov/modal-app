@@ -100,6 +100,7 @@ h6 {
 
 h1 {
 	font-size: 32px;
+	margin-bottom: 48px;
 }
 
 .vmodal {
@@ -189,8 +190,6 @@ h1 {
 	border-top: 1px solid #eee;
 }
 
-.modal-footer button {
-	border: 1px solid #000;
-	border-radius: 4px;
-	padding: 5px 10px;
+.card-title {
+	color: #000;
 }
